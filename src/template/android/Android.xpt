@@ -1,0 +1,80 @@
+«IMPORT gui»
+
+«DEFINE application FOR Application»
+«EXPAND pageContent FOREACH content»
+«ENDDEFINE»
+
+«DEFINE pageContent FOR gui::PageContent»
+«FILE (name == null ? "noName": name) + ".xml"-»
+«FOREACH this.layout AS manager-»
+«EXPAND manager FOR manager -»
+«ENDFOREACH -»
+«ENDFILE-»
+«ENDDEFINE»
+
+
+«DEFINE manager FOR gui::LayoutManager -»
+«IF this.type.toString().matches("horizontal")-»
+<HorizontalLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    «EXPAND element FOREACH this.elements -»
+</HorizontalLayout>
+«ENDIF-»
+«IF this.type.toString().matches("vertical")-»
+<VerticalLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    «EXPAND element FOREACH this.elements -»
+</VerticalLayout>
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE element FOR gui::Elements-»
+	«IF this.metaType == gui::LayoutManager-»
+	«EXPAND manager FOR (gui::LayoutManager)this -»
+	«ELSEIF this.metaType == gui::Label-»
+	«EXPAND label FOR (gui::Label)this -»
+	«ELSEIF this.metaType == gui::Button-»
+	«EXPAND button FOR (gui::Button)this -»
+	«ELSEIF this.metaType == gui::InputField-»	
+	«EXPAND inputField FOR (gui::InputField)this -»
+	«ENDIF-»
+«ENDDEFINE»
+
+
+«DEFINE label FOR Label-»
+  <TextView
+        android:id="@+id/«this.id»"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="28dp"
+        android:text="@string/«this.text»"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+«ENDDEFINE»
+
+«DEFINE button FOR Button-»
+<Button
+        android:id="@+id/«this.id»"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="«this.text»" />
+«ENDDEFINE»
+
+
+«DEFINE inputField FOR InputField-»
+<EditText
+        android:id="@+id/«this.id»"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+«ENDDEFINE»

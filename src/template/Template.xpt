@@ -1,0 +1,14 @@
+«IMPORT gui»
+«DEFINE main FOR Application»
+	«FILE (name == null ? "noName": name) + ".csv"-»
+		NameSpace: «namespace»,
+		ApplicationName: «name»
+	«ENDFILE»
+	«IF this.android!=null»
+	«EXPAND android::Android::application FOR this»
+	«ENDIF»
+	«IF this.wp7 != null»
+	«EXPAND wp7::WindowsPhone7::application FOR this»
+	«ENDIF»
+«ENDDEFINE»
+
