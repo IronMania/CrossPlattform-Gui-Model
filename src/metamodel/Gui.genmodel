@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.example.gui/src" modelPluginID="de.example.gui"
+    modelName="Gui" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false">
+  <foreignModel>Gui.ecore</foreignModel>
+  <genPackages prefix="Gui" basePackage="de.example.gui" disposableProviderFactory="true"
+      ecorePackage="Gui.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Gui.ecore#//eventType">
+      <genEnumLiterals ecoreEnumLiteral="Gui.ecore#//eventType/standard"/>
+      <genEnumLiterals ecoreEnumLiteral="Gui.ecore#//eventType/changePage"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Gui.ecore#//Wp7TabType">
+      <genEnumLiterals ecoreEnumLiteral="Gui.ecore#//Wp7TabType/none"/>
+      <genEnumLiterals ecoreEnumLiteral="Gui.ecore#//Wp7TabType/panorama"/>
+      <genEnumLiterals ecoreEnumLiteral="Gui.ecore#//Wp7TabType/pivot"/>
+    </genEnums>
+    <genClasses ecoreClass="Gui.ecore#//Application">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Application/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Application/namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//Application/window"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gui.ecore#//Application/startPage"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Gui.ecore#//PageContent"/>
+    <genClasses image="false" ecoreClass="Gui.ecore#//LayoutManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//LayoutManager/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//Horizontal"/>
+    <genClasses ecoreClass="Gui.ecore#//Vertical"/>
+    <genClasses image="false" ecoreClass="Gui.ecore#//Controls"/>
+    <genClasses ecoreClass="Gui.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Label/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//InputText">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//InputText/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//InputText/editable"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//Button">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Button/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//Page">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//Page/layout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//Page/toolbar"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Element/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//TabBar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//TabBar/tabpages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//TabBar/wp7Type"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//TabPage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//TabPage/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//TabPage/icon"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gui.ecore#//TabPage/page"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//TabPage/title"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Gui.ecore#//DisplayedPage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//DisplayedPage/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//DisplayedPage/appbar"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Gui.ecore#//ActiveControls">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//ActiveControls/clickEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//Image">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Image/defaultImage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Image/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//AppBar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//AppBar/appbarentry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gui.ecore#//AppBar/optionsEntry"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//AppBarEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//AppBarEntry/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//AppBarEntry/icon"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gui.ecore#//AppBarEntry/clickEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//AppBarEntry/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//MenuEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gui.ecore#//MenuEntry/menuentry"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//MenuEntry/icon"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Gui.ecore#//Event"/>
+    <genClasses ecoreClass="Gui.ecore#//Tapped">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Tapped/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//TextChanged"/>
+    <genClasses ecoreClass="Gui.ecore#//ChangePage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gui.ecore#//ChangePage/changeDisplayedPage"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//ToolBar"/>
+    <genClasses ecoreClass="Gui.ecore#//Grid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Grid/rows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gui.ecore#//Grid/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="Gui.ecore#//ActionEntry"/>
+    <genClasses ecoreClass="Gui.ecore#//OptionsEntry"/>
+  </genPackages>
+</genmodel:GenModel>

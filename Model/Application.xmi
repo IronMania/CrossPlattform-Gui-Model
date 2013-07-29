@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gui:Application
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gui="http://GUI/1.0"
+    xsi:schemaLocation="http://GUI/1.0 ../src/metamodel/Gui.ecore">
+  <window xsi:type="gui:Page"
+      name="HelloWorld"/>
+  <window xsi:type="gui:TabBar"
+      name="Tabs"/>
+  <window xsi:type="gui:Page"
+      name="HelloCam"/>
+  <window xsi:type="gui:Page"
+      name="HelloGeo"/>
+</gui:Application>
